@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-	"prebuild": "chmod +x node_modules/.bin/hexo",  // 赋予 hexo 执行权限
+	"prebuild": "chmod +x node_modules/.bin/hexo",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
