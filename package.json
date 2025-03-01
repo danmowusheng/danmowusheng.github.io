@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-	"prebuild": "chmod +x node_modules/.bin/hexo",
+    "prebuild": "chmod +x node_modules/.bin/hexo",
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
@@ -23,6 +23,7 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
+    "hexo-theme-fluid": "^1.9.8",
     "hexo-theme-landscape": "^1.0.0"
   }
 }
