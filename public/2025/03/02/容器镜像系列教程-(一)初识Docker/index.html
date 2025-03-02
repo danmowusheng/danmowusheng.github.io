@@ -19,21 +19,27 @@
   <meta name="author" content="淡漠无声">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="Docker技术简介Docker，目前非常热门的一项技术，只要你从事软件开发，就一定听说过这项技术。那，Docker究竟是什么？让我们来看下维基百科对它下的定义：Docker 是一种工具，用于在轻量级容器中自动部署应用程序，以便应用程序可以在不同的环境中隔离高效工作。Docker容器技术在云计算时代是非常重要的技术底座，极大地提升了程序的部署和分发效率。 为什么要使用Docker为什么要使用Doc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://danmowusheng-github-io.vercel.app/2024/05/05/hello-world/index.html">
+<meta property="og:title" content="容器镜像系列教程:(一)初识Docker">
+<meta property="og:url" content="http://danmowusheng-github-io.vercel.app/2025/03/02/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B-(%E4%B8%80)%E5%88%9D%E8%AF%86Docker/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Docker技术简介Docker，目前非常热门的一项技术，只要你从事软件开发，就一定听说过这项技术。那，Docker究竟是什么？让我们来看下维基百科对它下的定义：Docker 是一种工具，用于在轻量级容器中自动部署应用程序，以便应用程序可以在不同的环境中隔离高效工作。Docker容器技术在云计算时代是非常重要的技术底座，极大地提升了程序的部署和分发效率。 为什么要使用Docker为什么要使用Doc">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-05T07:57:04.530Z">
-<meta property="article:modified_time" content="2024-05-05T04:22:22.226Z">
+<meta property="og:image" content="http://danmowusheng-github-io.vercel.app/img/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/%E5%AE%B9%E5%99%A8VS%E8%99%9A%E6%8B%9F%E6%9C%BA.png">
+<meta property="og:image" content="http://danmowusheng-github-io.vercel.app/img/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/docker%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
+<meta property="article:published_time" content="2025-03-02T03:58:50.000Z">
+<meta property="article:modified_time" content="2025-03-02T10:11:22.961Z">
 <meta property="article:author" content="淡漠无声">
+<meta property="article:tag" content="容器">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="镜像">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://danmowusheng-github-io.vercel.app/img/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/%E5%AE%B9%E5%99%A8VS%E8%99%9A%E6%8B%9F%E6%9C%BA.png">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>容器镜像系列教程:(一)初识Docker - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +205,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="容器镜像系列教程:(一)初识Docker"></span>
           
         </div>
 
@@ -210,8 +216,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-05 15:57" pubdate>
-          2024年5月5日 下午
+        <time datetime="2025-03-02 11:58" pubdate>
+          2025年3月2日 中午
         </time>
       </span>
     
@@ -222,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 字
+          1.8k 字
         
       </span>
     
@@ -233,7 +239,7 @@
         
         
         
-          1 分钟
+          16 分钟
         
       </span>
     
@@ -270,24 +276,101 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">容器镜像系列教程:(一)初识Docker</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="Docker技术简介"><a href="#Docker技术简介" class="headerlink" title="Docker技术简介"></a>Docker技术简介</h2><p>Docker，目前非常热门的一项技术，只要你从事软件开发，就一定听说过这项技术。那，Docker究竟是什么？让我们来看下维基百科对它下的定义：<strong>Docker 是一种工具，用于在轻量级容器中自动部署应用程序，以便应用程序可以在不同的环境中隔离高效工作</strong>。Docker容器技术在云计算时代是非常重要的技术底座，极大地提升了程序的部署和分发效率。</p>
+<h2 id="为什么要使用Docker"><a href="#为什么要使用Docker" class="headerlink" title="为什么要使用Docker"></a>为什么要使用Docker</h2><p>为什么要使用Docker？在回答这个问题之前，我们需要先看一下在容器技术出现之前，大家是使用什么环境去部署应用程序的。</p>
+<p>在Docker技术之前，大家基本上是使用虚拟机来进行应用部署的。比方说，我开发了一个qq这样的应用程序，我需要部署它的服务端，我需要将qq的软件包上传到虚拟机上，再对虚拟机上的环境变量或者配置文件进行编辑，最终，再使用启动脚本运行该程序，这就是一个常见的部署场景，但是，这中间有两个问题，第一个问题是<strong>多实例的扩容非常麻烦</strong>，假设需要在另一台服务器上再部署该程序，需要将虚拟机上的应用程序打包，同时还要在另一台服务器上安装各种各样的依赖，如果已经做成标准化的脚本还好，要是没有，那得麻烦死；第二个问题是<strong>虚拟机本身是重载的，消耗资源</strong>，运行虚拟机本身就是很耗费资源的一件事，同时，如果在一个虚拟机上跑多个应用程序，程序之间可能会存在互相影响，导致多个应用程序运行异常。</p>
+<p>为了解决上面提到的两个问题，Docker技术应运而生，同时兼顾了轻量化、隔离性好和容易迁移的特性。</p>
+<p>应用在容器中运行，容器运行在宿主机上，每个容器是单独的、互相隔离的环境。容器的应用部署架构图和虚拟机的应用架构部署图如下，区别在于虚拟机部署需要一套重载的OS系统，这消耗了大量不必要的资源。</p>
+<p><img src="/img/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/%E5%AE%B9%E5%99%A8VS%E8%99%9A%E6%8B%9F%E6%9C%BA.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="Docker技术原理"><a href="#Docker技术原理" class="headerlink" title="Docker技术原理"></a>Docker技术原理</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><p>在Docker技术中，有以下三种核心概念：</p>
+<ul>
+<li><p>镜像（Image)：</p>
+<p>镜像是容器的静态模板，包含运行应用程序所需的所有文件和配置。镜像由多层只读文件系统组成，每一层代表一个构建步骤（如安装软件、添加文件）。镜像通过<code>Dockerfile</code>定义，使用<code>docker build</code>命令构建。</p>
+</li>
+<li><p>容器（Container)：</p>
+<p>容器是Docker的核心运行单元，是一个轻量级、独立、可执行的软件包，包含应用程序及其所有依赖项（如库、环境变量、配置文件）。容器基于镜像创建，运行在隔离的用户空间中，与宿主机共享操作系统内核，但拥有独立的文件系统、网络和进程空间。</p>
+</li>
+<li><p>仓库（Registry）：</p>
+<p>仓库是用于存储和分发镜像的集中化平台，分为公共仓库（如Docker Hub）和私有仓库（如自建Harbor）。镜像通过<code>docker push</code>上传到仓库，通过<code>docker pull</code>下载。</p>
+</li>
+</ul>
+<p>三者之间的关系可以用下图表示：</p>
+<p><img src="/img/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/docker%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="底层技术原理"><a href="#底层技术原理" class="headerlink" title="底层技术原理"></a>底层技术原理</h3><p>相信听到docker的神奇效果，你也会想知道到底docker是如何实现这样神奇的功效的，下面来介绍一下Docker容器化技术所使用到的两大核心底层技术：命名空间（Namespace）和控制组（CGroup）。</p>
+<hr>
+<h4 id="1-命名空间（Namespace）"><a href="#1-命名空间（Namespace）" class="headerlink" title="1. 命名空间（Namespace）"></a>1. <strong>命名空间（Namespace）</strong></h4><p>命名空间是Linux内核提供的一种隔离机制，用于将系统资源（如进程、网络、文件系统等）划分为独立的虚拟空间，使得每个命名空间中的资源对其他命名空间不可见。容器通过命名空间实现资源隔离，确保每个容器拥有独立的运行环境。</p>
+<p><strong>主要命名空间类型</strong>：</p>
+<ul>
+<li><strong>PID Namespace</strong>：隔离进程ID，容器内的进程从PID 1开始，与宿主机进程隔离。</li>
+<li><strong>Mount Namespace</strong>：隔离文件系统挂载点，容器拥有独立的文件系统视图。</li>
+<li><strong>Network Namespace</strong>：隔离网络接口、IP地址、路由表等，容器拥有独立的网络栈。</li>
+<li><strong>UTS Namespace</strong>：隔离主机名和域名，容器可以拥有独立的主机名。</li>
+<li><strong>IPC Namespace</strong>：隔离进程间通信（如消息队列、共享内存）。</li>
+<li><strong>User Namespace</strong>：隔离用户和用户组ID，容器内的root用户不等于宿主机的root用户。</li>
+</ul>
+<p><strong>作用</strong>：</p>
+<ul>
+<li>提供资源隔离，确保容器之间互不干扰。</li>
+<li>增强安全性，限制容器对宿主机和其他容器的影响。</li>
+</ul>
+<hr>
+<h4 id="2-控制组（CGroup）"><a href="#2-控制组（CGroup）" class="headerlink" title="2. 控制组（CGroup）"></a>2. <strong>控制组（CGroup）</strong></h4><p>控制组是Linux内核提供的一种资源管理机制，用于限制、记录和隔离进程组的资源使用（如CPU、内存、磁盘I&#x2F;O等）。容器通过CGroup实现资源限制和优先级控制，确保容器不会过度占用宿主机资源。</p>
+<p><strong>主要功能</strong>：</p>
+<ul>
+<li>资源限制：限制容器使用的CPU、内存、磁盘I&#x2F;O等资源。</li>
+<li>优先级控制：为容器分配资源使用优先级。</li>
+<li>资源统计：记录容器的资源使用情况，便于监控和优化。</li>
+<li><strong>进程控制</strong>：冻结、恢复或终止容器内的进程。</li>
+</ul>
+<p><strong>作用</strong>：</p>
+<ul>
+<li>防止单个容器耗尽宿主机资源，影响其他容器或系统稳定性。</li>
+<li>提供细粒度的资源管理，优化资源利用率。</li>
+</ul>
+<hr>
+<h4 id="命名空间与CGroup的关系"><a href="#命名空间与CGroup的关系" class="headerlink" title="命名空间与CGroup的关系"></a><strong>命名空间与CGroup的关系</strong></h4><ul>
+<li><strong>命名空间</strong>：负责资源隔离，确保容器拥有独立的运行环境。</li>
+<li><strong>CGroup</strong>：负责资源限制，确保容器不会过度占用资源。<br>两者结合，共同实现容器的轻量级虚拟化和资源管理。</li>
+</ul>
+<h2 id="Docker实用工具和生态"><a href="#Docker实用工具和生态" class="headerlink" title="Docker实用工具和生态"></a>Docker实用工具和生态</h2><ol>
+<li><p><strong>开发与部署工具</strong>  </p>
+<ul>
+<li><strong>Docker Compose</strong>：多容器编排的YAML定义（<code>docker-compose.yml</code>）。</li>
+<li><strong>Docker Swarm</strong>：原生集群管理（与Kubernetes的定位差异）。</li>
+<li><strong>Kubernetes集成</strong>：Docker作为容器运行时（CRI规范）。</li>
+</ul>
+</li>
+<li><p><strong>镜像与安全工具</strong>  </p>
+<ul>
+<li><strong>Docker Slim</strong>：镜像瘦身优化。</li>
+<li><strong>Trivy&#x2F;Clair</strong>：镜像漏洞扫描。</li>
+<li><strong>Docker Bench for Security</strong>：安全基线检查。</li>
+</ul>
+</li>
+<li><p><strong>监控与可视化</strong>  </p>
+<ul>
+<li><strong>cAdvisor</strong>：容器资源监控。</li>
+<li><strong>Portainer</strong>：图形化管理界面。</li>
+</ul>
+</li>
+<li><p><strong>CI&#x2F;CD场景实践</strong>  </p>
+<ul>
+<li><strong>GitLab CI与Docker</strong>：自动化构建与测试。</li>
+<li><strong>Jenkins Pipeline</strong>：容器化构建环境配置。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a><strong>结语</strong></h3><p>在当前的云计算领域，K8S已经成为编排部署的事实标准，而K8S正是使用容器化技术作为根基，随着越来越多的人使用容器化技术，容器化将继续为人们带来高效便捷的部署能力，并发展出新的功能特性，反过来推动云原生发展壮大。本文碍于篇幅，只对核心概念和原理等做了简要概述，该系列文章后续将更侧重于实际的使用，我们下一篇文章再见！</p>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h3><p><a target="_blank" rel="noopener" href="https://www.docker.com/">Docker: Accelerated Container Application Development</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/126687430">Docker容器技术介绍（内含详细教程） - 知乎</a></p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Docker_(software)">Docker (software) - Wikipedia</a></p>
 
                 
               </div>
@@ -296,6 +379,45 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" class="category-chain-item">系列教程</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" class="category-chain-item">容器镜像系列教程</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%AE%B9%E5%99%A8/" class="print-no-link">#容器</a>
+      
+        <a href="/tags/Docker/" class="print-no-link">#Docker</a>
+      
+        <a href="/tags/%E9%95%9C%E5%83%8F/" class="print-no-link">#镜像</a>
+      
+    </div>
   
 </div>
 
@@ -305,8 +427,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://danmowusheng-github-io.vercel.app/2024/05/05/hello-world/</div>
+      <div>容器镜像系列教程:(一)初识Docker</div>
+      <div>http://danmowusheng-github-io.vercel.app/2025/03/02/容器镜像系列教程-(一)初识Docker/</div>
     </div>
     <div class="license-meta">
       
@@ -318,7 +440,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年5月5日</div>
+          <div>2025年3月2日</div>
         </div>
       
       
@@ -350,18 +472,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/03/02/%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B-(%E4%B8%80)%E5%88%9D%E8%AF%86Docker/" title="容器镜像系列教程:(一)初识Docker">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">容器镜像系列教程:(一)初识Docker</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/11/Java%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84HashMap/" title="Java手写一个简单的HashMap">
-                        <span class="hidden-mobile">Java手写一个简单的HashMap</span>
+                      <a href="/2024/05/05/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
